@@ -3,18 +3,18 @@ package kr.easw.lesson3;
 import java.util.Arrays;
 
 public class SimpleArray {
-    private static int[] arrays = new int[10];
+    private static int[] arrays = new int[10];      // 10칸 배열 선언
 
-    private static int[] answer = new int[]{0, 1, 4, 16, 25, 49, 64, 81, 121, 144};
+    private static int[] answer = new int[]{0, 1, 4, 16, 25, 49, 64, 81, 121, 144};     // 답지 배열
 
     public static void main(String[] args) {
         for (int i = 0; i < 10; i++) {
-            fillArray(i);
+            fillArray(i);                       // i가 0~9까지 10번 반복
         }
         boolean isMatched = true;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++) {          // i가 0~9까지 10번 반복
             if (arrays[i] != answer[i]) {
-                System.out.printf("값이 일차하지 않습니다. (인덱스 %d)\n", i);
+                System.out.printf("값이 일치하지 않습니다. (인덱스 %d)\n", i);       // 틀리면 출력
                 isMatched = false;
             }
         }
@@ -33,7 +33,10 @@ public class SimpleArray {
      * <p>
      * * ^2는 제곱의 의미로 사용되었습니다.
      */
-    private static void fillArray(int index) {
-        throw new RuntimeException("이 코드 라인을 지우고, 이곳에서 작성하십시오.");
+    private static void fillArray(int index) {      // 배열 채우는 역할
+        for(index = 0; index < 10; index++){
+
+            arrays[index]=(index*7/5)*(index*7/5);
+        }
     }
 }
